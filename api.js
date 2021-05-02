@@ -1,11 +1,12 @@
 const express = require("express");
 const userRouter = require("./Router/user");
+const mainRouter = require("./Router/main");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.send("GET Method");
-});
+app.set("view engine", "ejs");
+app.use(express.json());
 
+app.use("/", mainRouter);
 app.use("/user", userRouter);
 
 // users

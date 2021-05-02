@@ -13,8 +13,12 @@ router.post("/reaction/like", (req, res) => {
   res.send("like Reacted");
 });
 
-router.get("/:id", (req, res) => {
+router.post("/:id", (req, res) => {
+  // console.log(req.params)
+  // console.log(req.headers);
+  // console.log(req.body);
   res.json({
+    id: req.params.id,
     username: "khattakdev",
   });
 });
